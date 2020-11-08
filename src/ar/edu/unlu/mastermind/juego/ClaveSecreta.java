@@ -1,12 +1,15 @@
 package ar.edu.unlu.mastermind.juego;
 
+import java.util.Random;
+
 public class ClaveSecreta extends Clave {
 
 	public ClaveSecreta() {
 		super();
+		Random rmd = new Random();
 		try {
 			for (int i = 1; i <= 5; i++)
-				this.setColor(FichaCodificadora.ROJO, i);
+				this.setColor(FichaCodificadora.values()[rmd.nextInt(FichaCodificadora.values().length)], i);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
